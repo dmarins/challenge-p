@@ -12,8 +12,24 @@ h1 {
   font-size: 1.4rem;
 }
 
-table,
-th,
-td {
-  border: 1px solid black;
+hr {
+  border: 1px solid #eee;
+}
+
+#root {
+  max-width: 50rem;
+  margin: 0 auto;
+}
+
+.animeTop {
+  transform: translateY(-20px);
+  opacity: 0;
+  animation: animeTop 0.3s forwards;
+}
+
+@keyframes animeTop {
+  to {
+    transform: initial;
+    opacity: initial;
+  }
 }
