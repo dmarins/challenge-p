@@ -8,7 +8,7 @@ const Header = () => {
       <ul>
         <li>
           <NavLink className={styles.link} to="/" end>
-            Filmes
+            Movies
           </NavLink>
         </li>
       </ul>
