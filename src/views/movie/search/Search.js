@@ -32,16 +32,28 @@ const Movies = () => {
   return (
     <section className={`${styles.movies} animeTop`}>
       <PageTitle title="Search" />
-      {movies.results.map((movie) => (
-        <Link
-          key={movie.title}
-          to={`movie/${movie.url.substr(movie.url.length - 2, 1)}`}
-        >
-          <div className={styles.longCard}>
-            <h1>{movie.title}</h1>
-          </div>
-        </Link>
-      ))}
+      {movies.results.map((movie) => {
+        let movieId = Number(movie.url.substr(movie.url.length - 2, 1));
+        let date =
+          movieId === 2
+            ? ` - ${new Date(movie.edited).toLocaleDateString("pt-BR", {
+                weekday: "long",
+                year: "numeric",
+                month: "long",
+                day: "numeric"
+              })}`
+            : "";
+
+        return (
+          <Link key={movie.title} to={`movie/${movieId}`}>
+            <div className={styles.longCard}>
+              <h1>
+                {movie.title} {`${date}`}
+              </h1>
+            </div>
+          </Link>
+        );
+      })}
     </section>
   );
 };
