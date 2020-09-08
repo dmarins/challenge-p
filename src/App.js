@@ -1,12 +1,22 @@
 import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
+import Header from "./components/header/Header";
+import Movies from "./views/movies/Movies";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <h1>Teste</h1>
+    <div>
+      <BrowserRouter>
+        <Header />
+        <main>
+          <Routes>
+            <Route path="/" element={<Movies />} />
+          </Routes>
+        </main>
+      </BrowserRouter>
     </div>
   );
-}
+};
 
 export default App;
