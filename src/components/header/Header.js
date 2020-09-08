@@ -10,6 +10,9 @@ const Header = () => {
           <NavLink className={styles.link} to="/" end>
             Movies
           </NavLink>
+          <NavLink className={styles.link} to="movie/lukeskywalker" end>
+            Movies With Luke Skywalker
+          </NavLink>
         </li>
       </ul>
     </nav>
