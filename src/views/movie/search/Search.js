@@ -1,5 +1,7 @@
 import React from "react";
-import styles from "./Movies.module.css";
+import styles from "./Search.module.css";
+import { Link } from "react-router-dom";
+import PageTitle from "../../../components/pageTitle/PageTitle";
 
 const Movies = () => {
   const [movies, setMovies] = React.useState(null);
@@ -21,21 +23,18 @@ const Movies = () => {
 
   if (movies === null) return null;
   return (
-    <section>
-      <table>
-        <thead>
-          <tr>
-            <th>Nome do Filme</th>
-          </tr>
-        </thead>
-        <tbody>
-          {movies.results.map((movie) => (
-            <tr key={movie.title}>
-              <td>{movie.title}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    <section className={`${styles.movies} animeTop`}>
+      <PageTitle title="Search" />
+      {movies.results.map((movie) => (
+        <Link
+          key={movie.title}
+          to={`movie/${movie.url.substr(movie.url.length - 2, 1)}`}
+        >
+          <div className={styles.longCard}>
+            <h1>{movie.title}</h1>
+          </div>
+        </Link>
+      ))}
     </section>
   );
 };

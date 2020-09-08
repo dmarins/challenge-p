@@ -1,0 +1,21 @@
+.movies {
+  display: flex;
+  flex-direction: column;
+}
+
+.longCard {
+  background-color: #ddd;
+  padding: 0.5rem 1rem;
+  margin: 1rem 0;
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+
+.longCard:hover {
+  transform: scale(1.05);
+}
+
+.title {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
